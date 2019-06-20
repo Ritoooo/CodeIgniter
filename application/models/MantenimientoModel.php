@@ -28,11 +28,20 @@ class mantenimientoModel extends CI_Model
 	}
 
 	public function obtenerContacto($idContacto){
-		$this->db->select('nombre', 'email', 'telefono', 'direccion', 'idContacto');
+		$this->db->select('nombre,email,telefono,direccion,idContacto');
 		$this->db->from('contacto');
 		$this->db->where('idContacto', $idContacto);
 		$contacto = $this->db->get();
-		return $contacto->result();
+        return $contacto->result();
+	}
+
+	public function update($data){
+		$this->db->set('nombre', $data['nombre']);
+		$this->db->set('email', $data['email']);
+		$this->db->set('telefono', $data['telefono']);
+		$this->db->set('direccion', $data['direccion']);
+		$this->db->where('idContacto', $data['id']);
+		$this->db->update('contacto');
 	}
 }
  ?>

@@ -32,7 +32,6 @@ class MantenimientoControlador extends CI_Controller
 	}
 
 	public function accion(){
-		//var_dump($_POST['editar']);
 		$this->load->model('mantenimientoModel');
 		$data['usuario'] = $this->mantenimientoModel->obtenerContacto($_POST['editar']);
 		$this->load->view('edit', $data);

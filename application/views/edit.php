@@ -4,7 +4,7 @@
 	<title>Nuevo Contacto</title>
 </head>
 <body>
-	<form name="alta" method="post" action="http://localhost/PYCodeIgniter/index.php/MantenimientoControlador/alta">
+	<form name="alta" method="post" action="http://localhost/PYCodeIgniter/index.php/MantenimientoControlador/editar">
 		<table>
 			<tr>
 				<td><label>Nombre</label></td>
