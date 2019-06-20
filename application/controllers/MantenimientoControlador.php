@@ -7,10 +7,9 @@ class MantenimientoControlador extends CI_Controller
 	public function index(){
 		$this->load->model("mantenimientoModel");
 		$usuarios = $this->mantenimientoModel->getData();
-		$data["page_title"] = "Contactos";
 		$data["usuarios"] = $usuarios;
-		$data["Persona"] = $usuarios;
-		$this->load->view('mantenimientoView',$data);
+		header('Content-Type: application/json');
+		echo json_encode($data);
 	}
 
 	public function alta(){
